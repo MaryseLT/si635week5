@@ -1,0 +1,4 @@
+name = week5p2
+description="Homework Part 2"
+core=7.x
+package=635
