@@ -1,0 +1,29 @@
+<?php
+
+// t() == protected function
+function week5p2_menu() {
+    $items = array();
+    $items['week5p2'] = array (
+        'title' => 'This Is Week 5 Part 2 Homework!',
+        'page callback' => 'week5p2_hello_world1',
+        'access callback' => true,
+    );
+    $items['week5p2/%/%'] = array( // The page callback + /param1/param2
+        'title' => 'It Is Also Due On October 23, 2019!',
+        'page callback' => 'week5p2_hello_world2',
+        'access callback' => true, // Hard coded to be TRUE
+        'page arguments' => array(1,2) // mapping the 2nd item (this is it) to the array
+    );
+    return $items;
+}
+
+Function week5p2_hello_world1() {
+    return t("Hello From Week 5 Part 2!");
+}
+
+Function week5p2_hello_world2($fname, $lname) {
+    return t("Did It Work As Well, @fname @lname!?", array(
+        '@fname'=> $fname,
+        '@lname'=>$lname
+    ));
+}
